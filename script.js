@@ -1,5 +1,6 @@
 import { assembleView, Text } from "fjuttes";
+import { HomePage } from "./pages/HomePage.js";
 
 assembleView(
-    new Text("Hello World")
+    new HomePage()
 );
