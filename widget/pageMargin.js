@@ -12,8 +12,8 @@ export class PageMargin extends View {
     }
 
     styledView(element){
-        element.style.marginLeft = "25%";
-        element.style.marginRight = "25%";
+        element.style.marginLeft = "12%";
+        element.style.marginRight = "12%";
 
         return element;
     }
