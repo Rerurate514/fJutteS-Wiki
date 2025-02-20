@@ -33,7 +33,7 @@ export class MyHeader extends View {
                         })
                     ),
                     new SpaceBox({width: "128px"}),
-                    this.buildHeaderLink("TOP"),
+                    this.buildHeaderLink("HOME"),
                     this.buildHeaderLink("ABOUT"),
                     this.buildHeaderLink("COMPONENTS"),
                     this.buildHeaderLink("JIPERES"),
