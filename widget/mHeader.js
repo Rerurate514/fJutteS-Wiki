@@ -1,6 +1,4 @@
-import { BaseCSS, Border, Box, Center, FontCSS, Image, Link, Margin, SpaceBox, Text, TextCSS, View } from "fjuttes";
-import { Row } from "../pre-components-test/row.js";
-
+import { BaseCSS, Border, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View } from "fjuttes";
 export class MyHeader extends View {
     constructor(){
         super();
@@ -10,8 +8,13 @@ export class MyHeader extends View {
         return document.createElement("div");
     }
 
+    styledView(element){
+        element.style.background = "#1F1F1F";
+        return element;
+    }
+
     build(){
-        return new Margin({
+        return new Padding({
             all: "16px",
             child: new Row({
                 isVerticalCenter: true,
@@ -28,7 +31,8 @@ export class MyHeader extends View {
                         new TextCSS({
                             fontCSS: new FontCSS({
                                 fontWeight: "bold",
-                                fontSize: "25px"
+                                fontSize: "25px",
+                                color: "white"
                             })
                         })
                     ),
@@ -49,19 +53,28 @@ export class MyHeader extends View {
             height: "100%",
             border: new Border({
                 borderSize: "2px",
-                color: "#29C5F8",
+                color: "#8BCD8A",
                 isTop: false,
                 isBottom: false,
                 isRight: false
             }),
             child: new Center(
                 new Link({
+                    isShownUnderline: false,
                     child: new Margin({
                         all: "4px",
-                        child: new Text(text)
+                        child: new Text(
+                            text,
+                            new TextCSS({
+                                fontCSS: new FontCSS({
+                                    fontWeight: "bold",
+                                    color: "white",
+                                })
+                            })
+                        )
                     })
                 })
             )
-        })
+        });
     }
 }
