@@ -1,4 +1,4 @@
-import { BaseCSS, Column, FontCSS, Image, SpaceBox, Text, TextCSS, View } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, SpaceBox, Text, TextCSS, WebkitCSS, View } from "fjuttes";
 import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
@@ -51,16 +51,25 @@ class _HomeContent extends View {
                 new SpaceBox({
                     height: "16px"
                 }),
-                new Text(
-                    "fJutteS is Pure JS Components base Lib.",
-                    new TextCSS({
-                        fontCSS: new FontCSS({
-                            fontWeight: "bold",
-                            color: "#3B3B3B",
-                            fontSize: "64px"
+                new Card({
+                    background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
+                    webkitCSS: new WebkitCSS({
+                        webkitBackgroundClip: "text",
+                    }),
+                    child: new Text(
+                        "fJutteS is Pure JavaScript Components base Lib.",
+                        new TextCSS({
+                            fontCSS: new FontCSS({
+                                fontWeight: "bold",
+                                color: "#3B3B3B",
+                                fontSize: "50px"
+                            }),
+                            webkitCSS: new WebkitCSS({
+                                webkitTextFillColor: "transparent"
+                            })
                         })
-                    })
-                )
+                    )
+                })
             ]
         })
     }
