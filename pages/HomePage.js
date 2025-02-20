@@ -3,6 +3,7 @@ import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
 import { PageMargin } from "../widget/pageMargin.js";
+import { LOGO_URL } from "../const/LOGO_URL.js";
 
 export class HomePage extends View {
     constructor(){
@@ -43,7 +44,7 @@ class _HomeContent extends View {
                     height: "64px"
                 }),
                 new Image({
-                    src: "../src/fjuttes-official-logo.svg",
+                    src: LOGO_URL,
                     baseCSS: new BaseCSS({
                         width: "256px"
                     })

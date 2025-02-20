@@ -1,4 +1,5 @@
 import { BaseCSS, Border, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View } from "fjuttes";
+import { LOGO_URL } from "../const/LOGO_URL.js";
 export class MyHeader extends View {
     constructor(){
         super();
@@ -20,7 +21,7 @@ export class MyHeader extends View {
                 isVerticalCenter: true,
                 children: [
                     new Image({
-                        src: "../src/fjuttes-official-logo.svg",
+                        src: LOGO_URL,
                         baseCSS: new BaseCSS({
                             width: "64px"
                         })
