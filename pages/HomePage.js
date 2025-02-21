@@ -1,4 +1,4 @@
-import { BaseCSS, Card, Column, FontCSS, Image, Margin, Text, TextCSS, WebkitCSS, View, Row, ElevatedButton } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, Margin, Text, TextCSS, WebkitCSS, View, Row, ElevatedButton, Link } from "fjuttes";
 import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
@@ -38,6 +38,14 @@ class _HomeContent extends View {
 
     build(){
         return new Column({
+            children: [
+                this._buildIntro(),
+            ]
+        })
+    }
+
+    _buildIntro(){
+        return new Column({
             isHorizontalCenter: true,
             children: [
                 new Margin({
@@ -60,8 +68,8 @@ class _HomeContent extends View {
                             fontCSS: new FontCSS({
                                 fontWeight: "bold",
                                 color: "#3B3B3B",
-                                fontSize: "32px",
-                                fontFamily: "fantasy",
+                                fontSize: "64px",
+                                fontFamily: "zap",
                                 fontWeight: "bold"
                             }),
                             webkitCSS: new WebkitCSS({
@@ -88,28 +96,31 @@ class _HomeContent extends View {
                                     child: new Text("Open Components Reference")
                                 }),
                             }),
-                            new Card({
-                                radius: "128px",
-                                background: " #3B3B3B",
-                                child: new ElevatedButton({
-                                    baseCSS: new BaseCSS({
-                                        padding: "16px"
-                                    }),
-                                    child: new Text(
-                                        "Let's watch the github source!",
-                                        new TextCSS({
-                                            fontCSS: new FontCSS({
-                                                color: "white"
+                            new Link({
+                                href: "https://github.com/Rerurate514/fJutteS",
+                                child: new Card({
+                                    radius: "128px",
+                                    background: " #3B3B3B",
+                                    child: new ElevatedButton({
+                                        baseCSS: new BaseCSS({
+                                            padding: "16px"
+                                        }),
+                                        child: new Text(
+                                            "Let's watch the github source!",
+                                            new TextCSS({
+                                                fontCSS: new FontCSS({
+                                                    color: "white"
+                                                })
                                             })
-                                        })
-                                    )
+                                        )
+                                    }),
                                 }),
-                            }),
+                            })
                         ]
                     })
                 }),
             ]
-        })
+        });
     }
 }
 
