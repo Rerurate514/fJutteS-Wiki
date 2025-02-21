@@ -19,6 +19,8 @@ export class Header extends View {
         if(this.props.isStickyHeader) element.style.position = "sticky";
         element.style.top = "0";
 
+        element.style.zIndex = 999;
+
         return element;
     }
 
