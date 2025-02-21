@@ -1,4 +1,4 @@
-import { BaseCSS, Border, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View } from "fjuttes";
+import { BaseCSS, BorderCSS, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View } from "fjuttes";
 import { LOGO_URL } from "../const/LOGO_URL.js";
 export class MyHeader extends View {
     constructor(){
@@ -52,7 +52,7 @@ export class MyHeader extends View {
         return new Box({
             width: "100%",
             height: "100%",
-            border: new Border({
+            borderCSS: new BorderCSS({
                 borderSize: "2px",
                 color: "#8BCD8A",
                 isTop: false,
