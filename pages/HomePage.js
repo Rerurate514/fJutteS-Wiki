@@ -1,4 +1,4 @@
-import { BaseCSS, Card, Column, FontCSS, Image, Margin, Text, TextCSS, WebkitCSS, View, Row, ElevatedButton, Link } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, WebkitCSS, View, Hover, ElevatedButton, Link, SpaceBox, Padding } from "fjuttes";
 import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
@@ -83,38 +83,51 @@ class _HomeContent extends View {
                         margin: "64px",
                         width: "100%"
                     }),
-                    child: new Row({
-                        isJustifySpaceAround: true,
+                    child: new Grid({
+                        minmaxPX:300,
+                        gap: "20px",
                         children: [
-                            new Card({
-                                radius: "128px",
-                                background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
-                                child: new ElevatedButton({
-                                    baseCSS: new BaseCSS({
-                                        padding: "16px"
+                            new Link({
+                                href: "",
+                                isShownUnderline: false,
+                                child: new Hover({
+                                    radius: "128px",
+                                    child: new Card({
+                                        background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
+                                        child: new Padding({
+                                            all: "16px",
+                                            child: new Text(
+                                                "Open Components Reference",
+                                                new TextCSS({
+                                                    fontCSS: new FontCSS({
+                                                        color: "black"
+                                                    })
+                                                })
+                                            )
+                                        }),
                                     }),
-                                    child: new Text("Open Components Reference")
-                                }),
+                                })
                             }),
                             new Link({
                                 href: "https://github.com/Rerurate514/fJutteS",
-                                child: new Card({
+                                isShownUnderline: false,
+                                child: new Hover({
                                     radius: "128px",
-                                    background: " #3B3B3B",
-                                    child: new ElevatedButton({
-                                        baseCSS: new BaseCSS({
-                                            padding: "16px"
-                                        }),
-                                        child: new Text(
-                                            "Let's watch the github source!",
-                                            new TextCSS({
-                                                fontCSS: new FontCSS({
-                                                    color: "white"
+                                    child: new Card({
+                                        background: " #3B3B3B",
+                                        child: new Padding({
+                                            all: "16px",
+                                            child: new Text(
+                                                "Let's watch the github source!",
+                                                new TextCSS({
+                                                    fontCSS: new FontCSS({
+                                                        color: "white"
+                                                    })
                                                 })
-                                            })
-                                        )
+                                            )
+                                        })
                                     }),
-                                }),
+                                })
                             })
                         ]
                     })
