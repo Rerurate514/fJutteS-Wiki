@@ -6,3 +6,8 @@ body {
 * {
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: "zap";
+    src: url("./fonts/ZapfinoExtraLT-One.otf");
+}
