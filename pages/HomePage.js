@@ -1,9 +1,8 @@
-import { BaseCSS, Card, Column, FontCSS, Image, SpaceBox, Text, TextCSS, WebkitCSS, View } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, Margin, Text, TextCSS, WebkitCSS, View, Row, ElevatedButton } from "fjuttes";
 import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
 import { PageMargin } from "../widget/pageMargin.js";
-import { LOGO_URL } from "../const/LOGO_URL.js";
 
 export class HomePage extends View {
     constructor(){
@@ -40,17 +39,14 @@ class _HomeContent extends View {
         return new Column({
             isHorizontalCenter: true,
             children: [
-                new SpaceBox({
-                    height: "64px"
-                }),
-                new Image({
-                    src: LOGO_URL,
-                    baseCSS: new BaseCSS({
-                        width: "256px"
-                    })
-                }),
-                new SpaceBox({
-                    height: "16px"
+                new Margin({
+                    all: "64px",
+                    child: new Image({
+                        src: LOGO_URL,
+                        baseCSS: new BaseCSS({
+                            width: "256px"
+                        })
+                    }),
                 }),
                 new Card({
                     background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
@@ -63,15 +59,56 @@ class _HomeContent extends View {
                             fontCSS: new FontCSS({
                                 fontWeight: "bold",
                                 color: "#3B3B3B",
-                                fontSize: "50px"
+                                fontSize: "32px",
+                                fontFamily: "fantasy",
+                                fontWeight: "bold"
                             }),
                             webkitCSS: new WebkitCSS({
                                 webkitTextFillColor: "transparent"
                             })
                         })
                     )
-                })
+                }),
+                new Card({
+                    baseCSS: new BaseCSS({
+                        margin: "64px",
+                        width: "100%"
+                    }),
+                    child: new Row({
+                        isJustifySpaceAround: true,
+                        children: [
+                            new Card({
+                                radius: "128px",
+                                background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
+                                child: new ElevatedButton({
+                                    baseCSS: new BaseCSS({
+                                        padding: "16px"
+                                    }),
+                                    child: new Text("Open Components Reference")
+                                }),
+                            }),
+                            new Card({
+                                radius: "128px",
+                                background: " #3B3B3B",
+                                child: new ElevatedButton({
+                                    baseCSS: new BaseCSS({
+                                        padding: "16px"
+                                    }),
+                                    child: new Text(
+                                        "Let's watch the github source!",
+                                        new TextCSS({
+                                            fontCSS: new FontCSS({
+                                                color: "white"
+                                            })
+                                        })
+                                    )
+                                }),
+                            }),
+                        ]
+                    })
+                }),
             ]
         })
     }
 }
+
