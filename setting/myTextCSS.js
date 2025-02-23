@@ -1,6 +1,6 @@
 import { TextCSS, FontCSS } from "fjuttes";
 
-export const SummaryText = new TextCSS({
+export const SUMMARY_TEXT_CSS = new TextCSS({
     fontCSS: new FontCSS({
         fontWeight: "bold",
         fontSize: "20px",
