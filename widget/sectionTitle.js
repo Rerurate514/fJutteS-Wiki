@@ -1,4 +1,5 @@
-import { FontCSS, Margin, Text, TextCSS, View } from "fjuttes";
+import { Margin, View } from "fjuttes";
+import { ColoredText } from "./coloredText.js";
 
 export class SectionTitle extends View {
     constructor(text){
@@ -14,15 +15,10 @@ export class SectionTitle extends View {
     build(){
         return new Margin({
             all: "16px",
-            child: new Text(
-                this.props.text,
-                new TextCSS({
-                    fontCSS: new FontCSS({
-                        fontFamily: "zap",
-                        fontSize: "32px"
-                    })
-                })
-            )
+            child: new ColoredText({
+                text: this.props.text,
+                fontSize: "32px"
+            })
         })
     }
 }
