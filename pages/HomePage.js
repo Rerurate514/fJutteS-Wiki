@@ -260,7 +260,7 @@ class _HomeContent extends View {
     _buildWithoutNpmSummary(){
         return new Column({
             children: [
-                new SectionTitle("MAKE WITHOUT NPM", "64px"),
+                new SectionTitle("Create Widgets Without npm", "64px"),
                 new Text(
                     "fJutteS can build a UI using only index.html if you use a CDN. npm installation is possible, but in that case, we recommend that you consider using other libraries.",
                     SUMMARY_TEXT_CSS_BLACK
@@ -324,7 +324,7 @@ class _HomeContent extends View {
     _buildComponentSummary(){
         return new Column({
             children: [
-                new SectionTitle("BUILD WIDGET", "64px"),
+                new SectionTitle("Build Widgets", "64px"),
                 
             ]
         });
@@ -345,7 +345,7 @@ class _HomeContent extends View {
                 }),
                 child: new Column({
                     children: [
-                        new SectionTitle("EASY LEARNING", "50px"),
+                        new SectionTitle("Easy Learning", "50px"),
                         new Text(
                             "It is easy to learn because it does not deviate greatly from the basic DOM operations of JS. However, some knowledge of state management with Provider is required.",
                             new TextCSS({
@@ -360,12 +360,19 @@ class _HomeContent extends View {
                         new SpaceBox({
                             height: "16px",
                         }), 
-                        new Row({
-                            isVerticalCenter: true,
-                            isJustifySpaceBetween: true,
+                        new Stack({
+                            baseCSS: new BaseCSS({
+                                width: "100%",
+                                height: "64px"
+                            }),
                             children: [
-                                this._buildJSCodeEx(),
-                                new BorderButton("See Details")
+                                new Center(
+                                    this._buildJSCodeEx(),
+                                ),
+                                new RelativePosition({
+                                    relativePositions: RelativePositions.RIGHT,
+                                    child: new BorderButton("See Details")
+                                })
                             ]
                         }),
                     ]
@@ -377,9 +384,6 @@ class _HomeContent extends View {
     _buildJSCodeEx(){
         return new Row({
             children:[
-                new SpaceBox({
-                    width: "100px"
-                }),
                 new Card({
                     background: "#1F1F1F",
                     radius: "8px",
