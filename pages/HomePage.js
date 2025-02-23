@@ -362,12 +362,21 @@ class _HomeContent extends View {
                         new SpaceBox({
                             height: "16px",
                         }), 
-                        new Row({
+                        new Grid({
+                            minmaxPX: 322,
                             isJustifySpaceBetween: true,
                             children: [
-                                new SpaceBox(),
-                                this._buildJSCodeEx(),
-                                new BorderButton("See Details")
+                                new RelativePosition({
+                                    relativePositions: RelativePositions.CENTER,
+                                    child: this._buildElementJSCodeEx(),
+                                }),
+                                new Margin({
+                                    all: "16px",
+                                    child: new RelativePosition({
+                                        relativePositions: RelativePositions.RIGHT,
+                                        child: new BorderButton("See Details")
+                                    }),
+                                })
                             ]
                         }),
                     ]
@@ -376,7 +385,7 @@ class _HomeContent extends View {
         });
     }
 
-    _buildJSCodeEx(){
+    _buildElementJSCodeEx(){
         return new Row({
             children:[
                 new Card({
