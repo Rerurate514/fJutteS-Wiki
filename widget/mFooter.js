@@ -57,7 +57,7 @@ export class MyFooter extends View {
                             })
                         ),
                         new Link({
-                            href: "https://github.com/Rerurate514/fJutteS/blob/2.5.0/LICENSE",
+                            href: "https://github.com/Rerurate514/fJutteS/blob/main/LICENSE",
                             isShownUnderline: false,
                             child: new Text(
                                 "LICENCE",
