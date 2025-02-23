@@ -3,11 +3,13 @@ import { Card, FontCSS, Text, TextCSS, View, WebkitCSS } from "fjuttes";
 export class ColoredText extends View {
     constructor({
         text,
-        fontSize = "16px"
+        fontSize = "16px",
+        isZap = true
     }){
         super({
             text: text,
-            fontSize: fontSize
+            fontSize: fontSize,
+            isZap: isZap
         });
     }
 
@@ -28,7 +30,7 @@ export class ColoredText extends View {
                         fontWeight: "bold",
                         color: "#3B3B3B",
                         fontSize: this.props.fontSize,
-                        fontFamily: "zap",
+                        fontFamily: this.props.isZap ? "zap" : "",
                         fontWeight: "bold"
                     }),
                     webkitCSS: new WebkitCSS({
