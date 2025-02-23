@@ -56,14 +56,6 @@ export class MyFooter extends View {
                                 })
                             })
                         ),
-                        new Text(
-                            "Copyright (c) 2025 Rerurate_514",
-                            new TextCSS({
-                                fontCSS: new FontCSS({
-                                    color: "white"
-                                })
-                            })
-                        ),
                         new Link({
                             href: "https://github.com/Rerurate514/fJutteS/blob/2.5.0/LICENSE",
                             isShownUnderline: false,
@@ -75,7 +67,15 @@ export class MyFooter extends View {
                                     })
                                 })
                             )
-                        })
+                        }),
+                        new Text(
+                            "Copyright (c) 2025 Rerurate_514",
+                            new TextCSS({
+                                fontCSS: new FontCSS({
+                                    color: "white"
+                                })
+                            })
+                        ),
                     ]
                 })
             ]
@@ -94,42 +94,54 @@ export class MyFooter extends View {
                         })
                     })
                 ),
-                new Text(
-                    "npm",
-                    new TextCSS({
-                        fontCSS: new FontCSS({
-                            color: "white",
-                            fontSize: "16px"
+                new Link({
+                    href: "https://www.npmjs.com/package/fjuttes",
+                    child: new Text(
+                        "npm",
+                        new TextCSS({
+                            fontCSS: new FontCSS({
+                                color: "white",
+                                fontSize: "16px"
+                            })
                         })
-                    })
-                ),
-                new Text(
-                    "github",
-                    new TextCSS({
-                        fontCSS: new FontCSS({
-                            color: "white",
-                            fontSize: "16px"
+                    ),
+                }),
+                new Link({
+                    href: "https://github.com/Rerurate514/fJutteS",
+                    child: new Text(
+                        "github",
+                        new TextCSS({
+                            fontCSS: new FontCSS({
+                                color: "white",
+                                fontSize: "16px"
+                            })
                         })
-                    })
-                ),
-                new Text(
-                    "Jiperes Wiki",
-                    new TextCSS({
-                        fontCSS: new FontCSS({
-                            color: "white",
-                            fontSize: "16px"
+                    ),
+                }),
+                new Link({
+                    href: "",
+                    child: new Text(
+                        "Jiperes Wiki",
+                        new TextCSS({
+                            fontCSS: new FontCSS({
+                                color: "white",
+                                fontSize: "16px"
+                            })
                         })
-                    })
-                ),
-                new Text(
-                    "About Developpers",
-                    new TextCSS({
-                        fontCSS: new FontCSS({
-                            color: "white",
-                            fontSize: "16px"
+                    ),
+                }),
+                new Link({
+                    href: "",
+                    child: new Text(
+                        "About Developpers",
+                        new TextCSS({
+                            fontCSS: new FontCSS({
+                                color: "white",
+                                fontSize: "16px"
+                            })
                         })
-                    })
-                ),
+                    ),
+                }),
             ]
         });
     }
