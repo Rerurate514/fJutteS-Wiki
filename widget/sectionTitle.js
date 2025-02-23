@@ -3,9 +3,10 @@ import { ColoredText } from "./coloredText.js";
 
 export class SectionTitle extends View {
     constructor(text, px){
+        if(!px) px = "32px"
         super({
             text: text,
-            px: px = "32px"
+            px: px
         });
     }
 
