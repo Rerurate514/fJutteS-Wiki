@@ -362,19 +362,12 @@ class _HomeContent extends View {
                         new SpaceBox({
                             height: "16px",
                         }), 
-                        new Stack({
-                            baseCSS: new BaseCSS({
-                                width: "100%",
-                                height: "64px"
-                            }),
+                        new Row({
+                            isJustifySpaceBetween: true,
                             children: [
-                                new Center(
-                                    this._buildJSCodeEx(),
-                                ),
-                                new RelativePosition({
-                                    relativePositions: RelativePositions.RIGHT,
-                                    child: new BorderButton("See Details")
-                                })
+                                new SpaceBox(),
+                                this._buildJSCodeEx(),
+                                new BorderButton("See Details")
                             ]
                         }),
                     ]
