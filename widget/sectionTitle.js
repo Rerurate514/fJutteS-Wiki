@@ -2,9 +2,10 @@ import { Margin, View } from "fjuttes";
 import { ColoredText } from "./coloredText.js";
 
 export class SectionTitle extends View {
-    constructor(text){
+    constructor(text, px){
         super({
-            text: text
+            text: text,
+            px: px = "32px"
         });
     }
 
@@ -17,7 +18,7 @@ export class SectionTitle extends View {
             all: "16px",
             child: new ColoredText({
                 text: this.props.text,
-                fontSize: "32px"
+                fontSize: this.props.px
             })
         })
     }
