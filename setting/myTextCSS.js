@@ -8,7 +8,7 @@ export const SUMMARY_TEXT_CSS_WHITE = new TextCSS({
     })
 });
 
-export const SUMMARY_TEXT_CSS_BLACk = new TextCSS({
+export const SUMMARY_TEXT_CSS_BLACK = new TextCSS({
     fontCSS: new FontCSS({
         fontWeight: "bold",
         fontSize: "20px",
