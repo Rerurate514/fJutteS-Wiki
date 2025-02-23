@@ -8,6 +8,7 @@ import { SectionTitle } from "../widget/sectionTitle.js";
 import { ColoredText } from "../widget/coloredText.js";
 import { SUMMARY_TEXT_CSS_BLACK, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTextCSS.js";
 import { BorderButton } from "../widget/borderButton.js";
+import { MyFooter } from "../widget/mFooter.js";
 
 export class HomePage extends View {
     constructor(){
@@ -27,6 +28,7 @@ export class HomePage extends View {
             child: new PageMargin(
                 new _HomeContent()
             ),
+            footer: new MyFooter()
         })
     }
 }
