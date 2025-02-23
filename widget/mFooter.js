@@ -1,4 +1,4 @@
-import { Text, View, Column, Grid, TextCSS, FontCSS, BaseCSS, Image, RelativePosition, RelativePositions, SpaceBox, Link, Row } from "fjuttes";
+import { Text, View, Column, Grid, TextCSS, FontCSS, BaseCSS, Image, RelativePosition, RelativePositions, SpaceBox, Link, Row, Center } from "fjuttes";
 import { LOGO_URL } from "../const/LOGO_URL.js";
 import { ColoredText } from "./coloredText.js";
 
@@ -83,66 +83,45 @@ export class MyFooter extends View {
     }
 
     _buildNav(){
-        return new Column({
-            children: [
-                new Text(
-                    "Navigation",
+        return new Center(
+            new Column({
+                children: [
+                    new RelativePosition({
+                        relativePositions: RelativePositions.LEFT,
+                        child: new Text(
+                            "Navigation",
+                            new TextCSS({
+                                fontCSS: new FontCSS({
+                                    color: "white",
+                                    fontSize: "32px"
+                                })
+                            })
+                        ),
+                    }),
+                    this._buildNavItem("npm", "https://www.npmjs.com/package/fjuttes"),
+                    this._buildNavItem("Github", "https://github.com/Rerurate514/fJutteS"),
+                    this._buildNavItem("Jiperes Wiki", ""),
+                    this._buildNavItem("About Developpers", "")
+                ]
+            })
+        );
+    }
+
+    _buildNavItem(text, link){
+        return new RelativePosition({
+            relativePositions: RelativePositions.LEFT,
+            child: new Link({
+                href: link,
+                child: new Text(
+                    text,
                     new TextCSS({
                         fontCSS: new FontCSS({
                             color: "white",
-                            fontSize: "32px"
+                            fontSize: "16px"
                         })
                     })
                 ),
-                new Link({
-                    href: "https://www.npmjs.com/package/fjuttes",
-                    child: new Text(
-                        "npm",
-                        new TextCSS({
-                            fontCSS: new FontCSS({
-                                color: "white",
-                                fontSize: "16px"
-                            })
-                        })
-                    ),
-                }),
-                new Link({
-                    href: "https://github.com/Rerurate514/fJutteS",
-                    child: new Text(
-                        "github",
-                        new TextCSS({
-                            fontCSS: new FontCSS({
-                                color: "white",
-                                fontSize: "16px"
-                            })
-                        })
-                    ),
-                }),
-                new Link({
-                    href: "",
-                    child: new Text(
-                        "Jiperes Wiki",
-                        new TextCSS({
-                            fontCSS: new FontCSS({
-                                color: "white",
-                                fontSize: "16px"
-                            })
-                        })
-                    ),
-                }),
-                new Link({
-                    href: "",
-                    child: new Text(
-                        "About Developpers",
-                        new TextCSS({
-                            fontCSS: new FontCSS({
-                                color: "white",
-                                fontSize: "16px"
-                            })
-                        })
-                    ),
-                }),
-            ]
-        });
+            }),
+        })
     }
 }
