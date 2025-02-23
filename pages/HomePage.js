@@ -1,4 +1,4 @@
-import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, WebkitCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, WebkitCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position, RelativePositions, RelativePosition } from "fjuttes";
 import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
@@ -6,7 +6,8 @@ import { PageMargin } from "../widget/pageMargin.js";
 import { LOGO_URL } from "../const/LOGO_URL.js";
 import { SectionTitle } from "../widget/sectionTitle.js";
 import { ColoredText } from "../widget/coloredText.js";
-import { SUMMARY_TEXT_CSS_BLACk, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTextCSS.js";
+import { SUMMARY_TEXT_CSS_BLACK, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTextCSS.js";
+import { BorderButton } from "../widget/borderButton.js";
 
 export class HomePage extends View {
     constructor(){
@@ -49,6 +50,10 @@ class _HomeContent extends View {
                 this._buildJiperesSummary(),
                 new SpaceBox({height: "64px"}),
                 this._buildWithoutNpmSummary(),
+                new SpaceBox({height: "64px"}),
+                this._buildComponentSummary(),
+                new SpaceBox({height: "64px"}),
+                this._buildStudyText(),
                 new SpaceBox({height: "64px"}),
             ]
         })
@@ -151,7 +156,7 @@ class _HomeContent extends View {
                                         new SectionTitle("SIMULAR EXPERIENCE"),
                                         new Text(
                                             "fJutteS is a library that provides a Flutter-like writing experience in web development.",
-                                            SUMMARY_TEXT_CSS_BLACk
+                                            SUMMARY_TEXT_CSS_BLACK
                                         ),
                                     ]
                                 })
@@ -202,7 +207,7 @@ class _HomeContent extends View {
                     })
                 })
             ]
-        })
+        });
     }
 
     _buildJiperesSummary(){
@@ -249,7 +254,7 @@ class _HomeContent extends View {
                     })
                 })
             ]
-        })
+        });
     }
 
     _buildWithoutNpmSummary(){
@@ -258,24 +263,196 @@ class _HomeContent extends View {
                 new SectionTitle("MAKE WITHOUT NPM", "64px"),
                 new Text(
                     "fJutteS can build a UI using only index.html if you use a CDN. npm installation is possible, but in that case, we recommend that you consider using other libraries.",
-                    SUMMARY_TEXT_CSS_BLACk
+                    SUMMARY_TEXT_CSS_BLACK
                 ),
                 new SpaceBox({
                     height: "32px",
                 }), 
-                new Row({
+                new Grid({
                     children: [
-                        new Image({
-                            baseCSS: new BaseCSS({
-                                width: "256px"
+                        new Center(
+                            new Image({
+                                baseCSS: new BaseCSS({
+                                    width: "200px"
+                                }),
+                                src: "https://raw.githubusercontent.com/Rerurate514/fJutteS-Wiki/a94fea640a04db0316f048bb35c768b2cc2dc16f/src/npm-logo-red.svg"
                             }),
-                            src: "https://raw.githubusercontent.com/Rerurate514/fJutteS-Wiki/a94fea640a04db0316f048bb35c768b2cc2dc16f/src/npm-logo-red.svg"
+                        ),
+                        new SpaceBox({
+                            height: "16px"
                         }),
-                        
+                        new Text(
+                            "able to use \"fjuttes\": \"https://unpkg.com/fjuttes@latest/dist/index.mjs\"",
+                            new TextCSS({
+                                fontCSS: new FontCSS({
+                                    fontWeight: "bold"
+                                })
+                            })
+                        ),
+                    ]
+                }),
+                new SpaceBox({
+                    height: "32px",
+                }), 
+                new Link({
+                    href: "",
+                    isShownUnderline: false,
+                    child: new Center(
+                        new Hover({
+                            radius: "128px",
+                            child: new Card({
+                                background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
+                                child: new Padding({
+                                    all: "16px",
+                                    child: new Text(
+                                        "Let's watch the usage!",
+                                        new TextCSS({
+                                            fontCSS: new FontCSS({
+                                                color: "black"
+                                            })
+                                        })
+                                    )
+                                }),
+                            }),
+                        })
+                    )
+                }),
+            ]
+        });
+    }
+
+    _buildComponentSummary(){
+        return new Column({
+            children: [
+                new SectionTitle("BUILD WIDGET", "64px"),
+                
+            ]
+        });
+    }
+
+    _buildStudyText(){
+        return  new Card({
+            elevation: ShadowLevel.LVL5,
+            radius: "32px",
+            background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
+            baseCSS: new BaseCSS({
+                padding: "16px"
+            }),
+            child: new Card({
+                background: "#3B3B3B",
+                baseCSS: new BaseCSS({
+                    padding: "16px"
+                }),
+                child: new Column({
+                    children: [
+                        new SectionTitle("EASY LEARNING", "50px"),
+                        new Text(
+                            "It is easy to learn because it does not deviate greatly from the basic DOM operations of JS. However, some knowledge of state management with Provider is required.",
+                            new TextCSS({
+                                fontCSS: new FontCSS({
+                                    fontWeight: "bold",
+                                    color: "white",
+                                    fontSize: "25px",
+                                    fontWeight: "bold"
+                                }),
+                            })
+                        ),
+                        new SpaceBox({
+                            height: "16px",
+                        }), 
+                        new Row({
+                            isVerticalCenter: true,
+                            isJustifySpaceBetween: true,
+                            children: [
+                                this._buildJSCodeEx(),
+                                new BorderButton("See Details")
+                            ]
+                        }),
                     ]
                 })
+            })
+        });
+    }
+
+    _buildJSCodeEx(){
+        return new Row({
+            children:[
+                new SpaceBox({
+                    width: "100px"
+                }),
+                new Card({
+                    background: "#1F1F1F",
+                    radius: "8px",
+                    baseCSS: new BaseCSS({
+                        padding: "16px",
+                    }),
+                    elevation: ShadowLevel.LVL5,
+                    child: new Row({
+                        isVerticalCenter: true,
+                        children: [
+                            new Text(
+                                "18 | ",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#6E7681"
+                                    })
+                                })
+                            ),
+                            new SpaceBox({
+                                width: "6px"
+                            }),
+                            new Text(
+                                "document",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#7CDCF0"
+                                    })
+                                })
+                            ),
+                            new Text(
+                                ".",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#C1CCCC"
+                                    })
+                                })
+                            ),
+                            new Text(
+                                "createElement",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#DCDCAA"
+                                    })
+                                })
+                            ),
+                            new Text(
+                                "(",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#1B9FF1"
+                                    })
+                                })
+                            ),
+                            new Text(
+                                "\"div\"",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#CE834A"
+                                    })
+                                })
+                            ),
+                            new Text(
+                                ")",
+                                new TextCSS({
+                                    fontCSS: new FontCSS({
+                                        color: "#1B9FF1"
+                                    })
+                                })
+                            ),
+                        ]
+                    })
+                })
             ]
-        })
+        });
     }
 }
-
