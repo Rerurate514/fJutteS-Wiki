@@ -156,7 +156,7 @@ class _HomeContent extends View {
                             new Center(
                                 new Column({
                                     children: [
-                                        new SectionTitle("SIMULAR EXPERIENCE"),
+                                        new SectionTitle("FAMILIAR EXPERIENCE"),
                                         new Text(
                                             "fJutteS is a library that provides a Flutter-like writing experience in web development.",
                                             SUMMARY_TEXT_CSS_BLACK
