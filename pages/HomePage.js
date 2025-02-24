@@ -479,7 +479,7 @@ class _HomeContent extends View {
                 }),
                 child: new Column({
                     children: [
-                        new SectionTitle("Easy Learning", "50px"),
+                        new SectionTitle("Easy Learning", "64px"),
                         new Text(
                             "It is easy to learn because it does not deviate greatly from the basic DOM operations of JS. However, some knowledge of state management with Provider is required.",
                             new TextCSS({
