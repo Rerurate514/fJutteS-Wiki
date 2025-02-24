@@ -328,7 +328,7 @@ class _HomeContent extends View {
         return new Column({
             children: [
                 new SectionTitle("Build Widgets", "64px"),
-                new Text("There are ready-to-use UI components included in fJutteS. (Column, Stack, Card, etc.) However, those components are created by me from fJutteS and are not particularly difficult to use.", SUMMARY_TEXT_CSS_BLACK),
+                new Text("There are ready-to-use UI components included in fJutteS. (Column, Stack, Card, etc.) And, those components are created by me with fJutteS.", SUMMARY_TEXT_CSS_BLACK),
                 new SpaceBox({
                     height: "16px",
                 }), 
