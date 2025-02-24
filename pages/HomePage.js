@@ -1,4 +1,4 @@
-import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, WebkitCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position, RelativePositions, RelativePosition } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position, RelativePositions, RelativePosition } from "fjuttes";
 import { Scaffold } from "../pre-components-test/scaffold.js";
 import { Header } from "../pre-components-test/header.js";
 import { MyHeader } from "../widget/mHeader.js";
@@ -9,6 +9,7 @@ import { ColoredText } from "../widget/coloredText.js";
 import { SUMMARY_TEXT_CSS_BLACK, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTextCSS.js";
 import { BorderButton } from "../widget/borderButton.js";
 import { MyFooter } from "../widget/mFooter.js";
+import { ComponentSectionCard } from "../widget/componentSectionCard.js";
 
 export class HomePage extends View {
     constructor(){
@@ -327,9 +328,137 @@ class _HomeContent extends View {
         return new Column({
             children: [
                 new SectionTitle("Build Widgets", "64px"),
-                
+                new Text("There are ready-to-use UI components included in fJutteS. (Column, Stack, Card, etc.) However, those components are created by me from fJutteS and are not particularly difficult to use.", SUMMARY_TEXT_CSS_BLACK),
+                new Grid({
+                    minmaxPX: 323,
+                    children: [
+                        new ComponentSectionCard(
+                            this._buildColumn(),
+                            "Column",
+                            "Column component is most basic vertical align component.",
+                            "https://"
+                        ),
+                        new ComponentSectionCard(
+                            this._buildStack(),
+                            "Stack",
+                            "Stack component is that overlays views.",
+                            "https://"
+                        ),
+                        new ComponentSectionCard(
+                            this._buildCenter(),
+                            "Center",
+                            "Center component is that aligns view to the center.",
+                            "https://"
+                        ),
+                        new ComponentSectionCard(
+                            this._buildHover(),
+                            "Hover",
+                            "Hover component provides hover effect and tap animation.",
+                            "https://"
+                        ),
+                    ]
+                })
             ]
         });
+    }
+
+    _buildColumn(){
+        return new Column({
+            baseCSS: new BaseCSS({
+                height: "fit-content"
+            }),
+            isHorizontalCenter: true,
+            children: [
+                new Box({
+                    width: "40%",
+                    height: "30px",
+                    background: "linear-gradient(135deg, #EDD51C, #29C5F8)"
+                }),
+                new SpaceBox({
+                    height: "8px",
+                }),
+                new Box({
+                    width: "40%",
+                    height: "30px",
+                    background: "linear-gradient(135deg, #EDD51C, #29C5F8)"
+                }),
+                new SpaceBox({
+                    height: "8px",
+                }), 
+                new Box({
+                    width: "40%",
+                    height: "30px",
+                    background: "linear-gradient(135deg, #EDD51C, #29C5F8)"
+                }),
+            ]
+        })
+    }
+
+    _buildStack(){
+        return new Center(
+            new Stack({
+                baseCSS: new BaseCSS({
+                    width: "106px",
+                    height: "106px"
+                }),
+                children: [
+                    new Box({
+                        width: "106px",
+                        height: "106px",
+                        background: "linear-gradient(135deg, #EDD51C, #29C5F8)"
+                    }),
+                    new Margin({
+                        all: "8px",
+                        child: new Box({
+                            width: "50px",
+                            height: "50px",
+                            background: "white",
+                        }),
+                    })
+                ]
+            })
+        );
+    }
+
+    _buildCenter(){
+        return new Center(
+            new Stack({
+                baseCSS: new BaseCSS({
+                    width: "106px",
+                    height: "106px"
+                }),
+                children: [
+                    new Box({
+                        width: "106px",
+                        height: "106px",
+                        background: "linear-gradient(135deg, #EDD51C, #29C5F8)"
+                    }),
+                    new Center(
+                        new Box({
+                            width: "40px",
+                            height: "40px",
+                            background: "white",
+                        }),
+                    )
+                ]
+            })
+        );
+    }
+
+    _buildHover(){
+        return new Center(
+            new Hover({
+                onClickEffect: true,
+                child: new Box({
+                    width: "106px",
+                    height: "106px",
+                    background: "linear-gradient(135deg, #EDD51C, #29C5F8)",
+                    child: new Center(
+                        new Text("Click Here")
+                    )
+                }),
+            })
+        );
     }
 
     _buildStudyText(){
