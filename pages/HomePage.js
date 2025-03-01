@@ -1,14 +1,9 @@
 import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position, RelativePositions, RelativePosition } from "fjuttes";
-import { Scaffold } from "../pre-components-test/scaffold.js";
-import { Header } from "../pre-components-test/header.js";
-import { MyHeader } from "../widget/mHeader.js";
-import { PageMargin } from "../widget/pageMargin.js";
 import { LOGO_URL } from "../const/LOGO_URL.js";
 import { SectionTitle } from "../widget/sectionTitle.js";
 import { ColoredText } from "../widget/coloredText.js";
 import { SUMMARY_TEXT_CSS_BLACK, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTextCSS.js";
 import { BorderButton } from "../widget/borderButton.js";
-import { MyFooter } from "../widget/mFooter.js";
 import { ComponentSectionCard } from "../widget/componentSectionCard.js";
 
 export class HomePage extends View {
