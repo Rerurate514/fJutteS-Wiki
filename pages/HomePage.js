@@ -5,6 +5,7 @@ import { ColoredText } from "../widget/coloredText.js";
 import { SUMMARY_TEXT_CSS_BLACK, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTextCSS.js";
 import { BorderButton } from "../widget/borderButton.js";
 import { ComponentSectionCard } from "../widget/componentSectionCard.js";
+import { PageMargin } from "../widget/pageMargin.js";
 
 export class HomePage extends View {
     constructor(){
@@ -16,22 +17,24 @@ export class HomePage extends View {
     }
 
     build(){
-        return new Column({
-            children: [
-                this._buildIntro(),
-                new SpaceBox({height: "64px"}),
-                this._buildSummary(),
-                new SpaceBox({height: "64px"}),
-                this._buildJiperesSummary(),
-                new SpaceBox({height: "64px"}),
-                this._buildWithoutNpmSummary(),
-                new SpaceBox({height: "64px"}),
-                this._buildComponentSummary(),
-                new SpaceBox({height: "64px"}),
-                this._buildStudyText(),
-                new SpaceBox({height: "64px"}),
-            ]
-        })
+        return new PageMargin(
+            new Column({
+                children: [
+                    this._buildIntro(),
+                    new SpaceBox({height: "64px"}),
+                    this._buildSummary(),
+                    new SpaceBox({height: "64px"}),
+                    this._buildJiperesSummary(),
+                    new SpaceBox({height: "64px"}),
+                    this._buildWithoutNpmSummary(),
+                    new SpaceBox({height: "64px"}),
+                    this._buildComponentSummary(),
+                    new SpaceBox({height: "64px"}),
+                    this._buildStudyText(),
+                    new SpaceBox({height: "64px"}),
+                ]
+            })
+        );
     }
 
     _buildIntro(){
