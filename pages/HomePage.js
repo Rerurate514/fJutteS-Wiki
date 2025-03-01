@@ -21,29 +21,6 @@ export class HomePage extends View {
     }
 
     build(){
-        return new Scaffold({
-            header: new Header({
-                isStickyHeader: true,
-                child: new MyHeader()
-            }),
-            child: new PageMargin(
-                new _HomeContent()
-            ),
-            footer: new MyFooter()
-        })
-    }
-}
-
-class _HomeContent extends View {
-    constructor(){
-        super();
-    }
-
-    createWrapView(){
-        return document.createElement("div");
-    }
-
-    build(){
         return new Column({
             children: [
                 this._buildIntro(),
