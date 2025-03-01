@@ -22,7 +22,6 @@ export const COMPONENTS = [
     "Position",
     "RadioButton",
     "RelativePosition",
-    "RelativePositions",
     "Row",
     "Shrink",
     "SimpleDialog",
