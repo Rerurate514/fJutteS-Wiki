@@ -16,4 +16,4 @@ assembleView(
     })
 );
 
-pageIndexProvider.update(() => 0)
+pageIndexProvider.update(() => 1)
