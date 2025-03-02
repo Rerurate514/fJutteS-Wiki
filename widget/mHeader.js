@@ -1,5 +1,6 @@
-import { BaseCSS, BorderCSS, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View } from "fjuttes";
+import { BaseCSS, BorderCSS, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View, ElevatedButton } from "fjuttes";
 import { LOGO_URL } from "../const/LOGO_URL.js";
+import { pageIndexProvider } from "../providers/routerProvider.js";
 export class MyHeader extends View {
     constructor(){
         super();
@@ -38,16 +39,16 @@ export class MyHeader extends View {
                         })
                     ),
                     new SpaceBox({width: "128px"}),
-                    this.buildHeaderLink("HOME"),
-                    this.buildHeaderLink("COMPONENTS"),
-                    this.buildHeaderLink("JIPERES"),
-                    this.buildHeaderLink("DEVELOPPER"),
+                    this.buildHeaderLink("HOME", 0),
+                    this.buildHeaderLink("COMPONENTS", 1),
+                    this.buildHeaderLink("JIPERES", 2),
+                    this.buildHeaderLink("DEVELOPPER", 3),
                 ]
             })            
         })
     }
 
-    buildHeaderLink(text){
+    buildHeaderLink(text, index){
         return new Box({
             width: "100%",
             height: "100%",
@@ -59,8 +60,14 @@ export class MyHeader extends View {
                 isRight: false
             }),
             child: new Center(
-                new Link({
-                    isShownUnderline: false,
+                new ElevatedButton({
+                    radius: "16px",
+                    baseCSS: new BaseCSS({
+                        padding: "16px"
+                    }),
+                    onClick: () => {
+                        pageIndexProvider.update(() => index)
+                    },
                     child: new Margin({
                         all: "4px",
                         child: new Text(

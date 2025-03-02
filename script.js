@@ -1,5 +1,5 @@
 import { assembleView } from "fjuttes";
-import { pageIndexProvider, routerProvider } from "./providers/routerProvider.js";
+import { routerProvider } from "./providers/routerProvider.js";
 import { Scaffold } from "./pre-components-test/scaffold.js";
 import { Header } from "./pre-components-test/header.js";
 import { MyHeader } from "./widget/mHeader.js";
@@ -15,5 +15,3 @@ assembleView(
         footer: new MyFooter()
     })
 );
-
-pageIndexProvider.update(() => 1)
