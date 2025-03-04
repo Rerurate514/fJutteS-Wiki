@@ -1,5 +1,4 @@
-import { Text, View, Column, BaseCSS, TextCSS, FontCSS, SpaceBox } from "fjuttes";
-import { ComponentsUsage } from "./componentsUsage.js";
+import { Text, View, Column, BaseCSS, TextCSS, FontCSS, SpaceBox, Card } from "fjuttes";
 
 export class WikiComponentTemplate extends View {
     constructor({
@@ -41,9 +40,12 @@ export class WikiComponentTemplate extends View {
                         })
                     })
                 ),
-                new ComponentsUsage(
-                    this.props.example
-                ),
+                new Card({
+                    baseCSS: new BaseCSS({
+                        margin: "32px"
+                    }),
+                    child: this.props.example
+                }),
                 new SpaceBox({
                     height: "32px"
                 }),
