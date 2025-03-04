@@ -1,6 +1,6 @@
 import { PageRouter, BaseCSS, Card, Column, Provider, Row, Text, View, TextCSS, FontCSS, ElevatedButton, LimitedProviderScope, ShadowLevel, Box } from "fjuttes";
 import { COMPONENTS } from "../const/COMPONENTS_COL.js";
-import { AccordionWiki } from "../widget/components-wiki/accordionWiki.js";
+import { generateComponentsWiki } from "../logic/generateComponentsWiki.js";
 
 export class ComponentWikiPage extends View {
     constructor(index){
@@ -8,9 +8,7 @@ export class ComponentWikiPage extends View {
 
         const wikiRouterProvider = Provider.createProvider((ref) => {
             const page = new PageRouter({
-                pages: [
-                    new AccordionWiki()
-                ]
+                pages: generateComponentsWiki()
             });
 
             ref.watch(pageIndexProvider, (index) => {
