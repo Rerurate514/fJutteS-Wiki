@@ -5,7 +5,7 @@ import { WikiComponentTemplate } from "../widget/wikiComponentTemplate.js";
 
 export function generateComponentsWiki(){
     return COMPONENTS.map((component, index) => {
-        return WikiComponentTemplate({
+        return new WikiComponentTemplate({
             name: component,
             summary: COMPONENTS_SUMMARY_EN[component],
             example: COMPONENTS_USAGE_EXAMPLES_INSTANCES[component]
