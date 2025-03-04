@@ -1,6 +1,5 @@
-import { Accordion, Box, Card, Center, Chips, Clip, Column, DropDownMenu, ElevatedButton, ExpandsPanel, FloatingActionButton, Grid, Header, Hover, Image, LimitedProviderScope, Link, Margin, Padding, PageRouter, Paginations, Position, RadioButton, RelativePosition, Row, Scaffold, Shrink, SimpleDialog, Slider, SpaceBox, Stack, Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS } from './your-components-file'; // 各コンポーネントのパス
+import { Accordion, Box, Card, Center, Chips, Clip, Column, DropDownMenu, ElevatedButton, ExpandsPanel, FloatingActionButton, Grid, Header, Hover, Image, LimitedProviderScope, Link, Margin, Padding, PageRouter, Paginations, Position, RadioButton, RelativePosition, Row, Scaffold, Shrink, SimpleDialog, Slider, SpaceBox, Stack, Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS } from 'fjuttes';
 
-// 擬似的なプロバイダーとページコンポーネント
 const myProvider = { read: () => "Provider Value" };
 const HomePage = () => new Text("Home Page");
 const AboutPage = () => new Text("About Page");
