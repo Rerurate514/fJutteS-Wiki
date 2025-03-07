@@ -5,6 +5,7 @@ export const COMPONENTS = [
     "Center",
     "Chips",
     "Clip",
+    "CodeBlock",
     "Column",
     "DropDownMenu",
     "ElevatedButton",

@@ -60,6 +60,7 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
             })
         }),
     }),
+    "CodeBlock": new Text("ad"),
     "Column": new Column({
         children: [new Text("Item 1"), new Text("Item 2"), new Text("Item 3")]
     }),
