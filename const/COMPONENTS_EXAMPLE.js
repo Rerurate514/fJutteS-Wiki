@@ -2,7 +2,7 @@ import {
     Accordion, Box, Card, Center, Chips, Clip, Column, DropDownMenu, DropDownMenuItem, ElevatedButton, ExpandsPanel,
     FloatingActionButton, Grid, Header, Hover, Image, LimitedProviderScope, Link, Margin, Padding, PageRouter,
     Paginations, Position, RadioButton, RelativePosition, Row, Scaffold, Shrink, SimpleDialog, Slider, SpaceBox, Stack,
-    Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS, RelativePositions, Provider
+    Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS, RelativePositions, Provider, CodeBlock
 } from 'fjuttes';
 import { LOGO_URL } from "../const/LOGO_URL.js";
 
@@ -16,6 +16,12 @@ const providerText = (function(value) {
         build: (current) => new Text(`current Value is ${current}`)
     });
 })
+
+const codeExampleString = `
+function hello() {
+  console.log("Hello, world!");
+}
+`;
 
 export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
     "Accordion": new Accordion({
@@ -60,7 +66,11 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
             })
         }),
     }),
-    "CodeBlock": new Text("ad"),
+    "CodeBlock": new CodeBlock({
+        code: codeExampleString,
+        language: 'js',
+        showLineNumbers: true,
+    }),
     "Column": new Column({
         children: [new Text("Item 1"), new Text("Item 2"), new Text("Item 3")]
     }),
