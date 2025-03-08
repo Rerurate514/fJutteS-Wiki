@@ -97,23 +97,60 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
     }),
     "ExpandsPanel": new ExpandsPanel({
         titleItem: new Text("Details"),
-        content: new Text("Detailed information here")
+        child: new Text("Detailed information here")
     }),
     "FloatingActionButton": new FloatingActionButton({
         onClick: () => console.log("FAB clicked")
     }),
-    "Grid": new Grid({
-        children: [new Box({
-            width: "50px",
-            height: "50px",
-            background: "lightblue"
-        }), new Box({
-            width: "50px",
-            height: "50px",
-            background: "lightgreen"
-        })],
-        minmaxPX: 50,
-        fraction: 1
+    "Grid": new Column({
+        baseCSS: new BaseCSS({
+            width: "200px",              
+        }),
+        children: [
+            new LimitedProviderScope({
+                watchingProviders: [ myProvider ],
+                build: (value) => {
+                    return new Box({
+                        width: `${value * 2}px`,
+                        height: "200px",
+                        background: "#BBBBBB",
+                        child: new Grid({
+                            minmaxPX: 50,
+                            children: [
+                                new Box({
+                                    width: "50px",
+                                    height: "50px",
+                                    background: "green"
+                                }), 
+                                new Box({
+                                    width: "50px",
+                                    height: "50px",
+                                    background: "lightgreen"
+                                }),
+                                new Box({
+                                    width: "50px",
+                                    height: "50px",
+                                    background: "lightblue"
+                                }),
+                                new Box({
+                                    width: "50px",
+                                    height: "50px",
+                                    background: "blue"
+                                }), 
+                            ],
+                        })
+                    });
+                }
+            }),
+            new SpaceBox({
+                height: "32px"
+            }),
+            new Slider({
+                value: 50,
+                provider: myProvider
+            }),
+            new Text("Control Slider to resize")
+        ]
     }),
     "Header": new Header({
         title: "Page Title",

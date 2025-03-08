@@ -14,7 +14,7 @@ export class ComponentWikiPage extends View {
             ref.watch(pageIndexProvider, (index) => {
                 page.replacePage(index);
             });
-
+            
             return page;
         }, "routerProvider");
 
