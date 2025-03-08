@@ -1,4 +1,4 @@
-import { Text, View, Column, BaseCSS, TextCSS, FontCSS, SpaceBox, Card } from "fjuttes";
+import { Text, View, Column, BaseCSS, TextCSS, FontCSS, SpaceBox, Card, CodeBlock, ShadowLevel } from "fjuttes";
 
 export class WikiComponentTemplate extends View {
     constructor({
@@ -41,8 +41,11 @@ export class WikiComponentTemplate extends View {
                     })
                 ),
                 new Card({
+                    radius: "16px",
+                    elevation: ShadowLevel.LVL1,
                     baseCSS: new BaseCSS({
-                        margin: "32px"
+                        margin: "32px",
+                        padding: "64px"
                     }),
                     child: this.props.example
                 }),
@@ -52,6 +55,29 @@ export class WikiComponentTemplate extends View {
                 new Text(
                     this.props.summary
                 ),
+                new SpaceBox({
+                    height: "64px"
+                }),
+                new Text(
+                    "Code Example",
+                    new TextCSS({
+                        fontCSS: new FontCSS({
+                            fontWeight: "bold",
+                            fontSize: "32px"
+                        })
+                    })
+                ),
+                new Card({
+                    radius: "16px",
+                    elevation: ShadowLevel.LVL1,
+                    baseCSS: new BaseCSS({
+                        margin: "8px",
+                        padding: "16px"
+                    }),
+                    child: new CodeBlock({
+                        code: this.props.exampleCode,
+                    })
+                }),
             ]
         })
     }
