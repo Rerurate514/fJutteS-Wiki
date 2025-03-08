@@ -1,7 +1,5 @@
-import { assembleView, ProviderObserver } from "fjuttes";
+import { assembleView, ProviderObserver, Scaffold, Header } from "fjuttes";
 import { routerProvider } from "./providers/routerProvider.js";
-import { Scaffold } from "./pre-components-test/scaffold.js";
-import { Header } from "./pre-components-test/header.js";
 import { MyHeader } from "./widget/mHeader.js";
 import { MyFooter } from "./widget/mFooter.js";
 
