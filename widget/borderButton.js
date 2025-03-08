@@ -1,9 +1,9 @@
-import { Link, View, Hover, Card, Padding, Text, TextCSS, FontCSS } from "fjuttes";
+import { Link, View, Hover, Card, Padding, Text, TextCSS, FontCSS, ElevatedButton } from "fjuttes";
 
 export class BorderButton extends View {
-    constructor(text){
+    constructor(text, onClick){
         super({
-            text: text
+            text, onClick
         });
     }
 
@@ -29,25 +29,22 @@ export class BorderButton extends View {
     build(){
         return new Card({
             background: "white",
-            child: new Link({
-                href: "",
-                isShownUnderline: false,
-                child: new Hover({
-                    radius: "128px",
-                    child: new Card({
-                        child: new Padding({
-                            all: "16px",
-                            child: new Text(
-                                this.props.text,
-                                new TextCSS({
-                                    fontCSS: new FontCSS({
-                                        color: "black"
-                                    })
+            child: new ElevatedButton({
+                onClick: this.props.onClick,
+                radius: "128px",
+                child: new Card({
+                    child: new Padding({
+                        all: "16px",
+                        child: new Text(
+                            this.props.text,
+                            new TextCSS({
+                                fontCSS: new FontCSS({
+                                    color: "black"
                                 })
-                            )
-                        }),
+                            })
+                        )
                     }),
-                })
+                }),
             })
         })
     }
