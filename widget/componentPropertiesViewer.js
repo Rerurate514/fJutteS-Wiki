@@ -10,7 +10,7 @@ export class ComponentPropertiesViewer extends View {
     }
 
     build() {
-        const propertiesList = Object.entries(this.props.properties).map(
+        const propertiesList = Object.entries(this.props.properties.properties).map(
             ([propertyName, propertyDetails]) => {
                 return new Card({
                     child: new Column({
