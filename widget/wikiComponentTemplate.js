@@ -1,4 +1,5 @@
 import { Text, View, Column, BaseCSS, TextCSS, FontCSS, SpaceBox, Card, CodeBlock, ShadowLevel } from "fjuttes";
+import { ComponentPropertiesViewer } from "./componentPropertiesViewer.js";
 
 export class WikiComponentTemplate extends View {
     constructor({
@@ -76,6 +77,30 @@ export class WikiComponentTemplate extends View {
                     }),
                     child: new CodeBlock({
                         code: this.props.exampleCode,
+                    })
+                }),
+                new SpaceBox({
+                    height: "32px"
+                }),
+                new Text(
+                    "Component Properties",
+                    new TextCSS({
+                        fontCSS: new FontCSS({
+                            fontWeight: "bold",
+                            fontSize: "32px"
+                        })
+                    })
+                ),
+                new Card({
+                    radius: "16px",
+                    elevation: ShadowLevel.LVL1,
+                    baseCSS: new BaseCSS({
+                        margin: "8px",
+                        padding: "16px"
+                    }),
+                    child: new ComponentPropertiesViewer({
+                        componentName: this.props.name,
+                        properties: this.props.properties
                     })
                 }),
             ]
