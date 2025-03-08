@@ -33,7 +33,8 @@ export const COMPONENTS_SUMMARY_JP = {
     "Stack": "子要素をスタック形式で配置する。子要素を重ねて表示し、レイヤー構造を作成。画像やテキストの重ね合わせに利用。",
     "Text": "テキストをスタイリングするためのラッパー。フォント、色、サイズ、スタイルなどを自由に設定可能。WebkitCSSもサポート。",
     "TextArea": "複数行のテキスト入力を可能にする。フォームなどで長文の入力を受け付ける。テキストの折り返しやスクロールも可能。",
-    "TextForm": "フォーム用のテキスト入力フィールドを提供する。テキストの入力、編集、検証を行うためのフィールド。ラベルやプレースホルダーも設定可能。"
+    "TextForm": "フォーム用のテキスト入力フィールドを提供する。テキストの入力、編集、検証を行うためのフィールド。ラベルやプレースホルダーも設定可能。",
+    "Transform": "HTML要素に対して2Dまたは3Dの変換を適用する。要素の移動、回転、拡大縮小、歪曲などをCSSのtransformプロパティを使用して行う。アニメーション機能もサポートしており、スムーズな視覚効果を実現。"
 };
 
 export const COMPONENTS_SUMMARY_EN = {
@@ -71,5 +72,6 @@ export const COMPONENTS_SUMMARY_EN = {
     "Stack": "Arranges child elements in a stacked manner, creating layered structures for overlapping images or text.",
     "Text": "A wrapper for styling text with customizable font, color, size, and styles. Supports WebkitCSS.",
     "TextArea": "Enables multi-line text input in forms, supporting text wrapping and scrolling.",
-    "TextForm": "Provides text input fields for forms with labeling and placeholder support, facilitating text input, editing, and validation."
+    "TextForm": "Provides text input fields for forms with labeling and placeholder support, facilitating text input, editing, and validation.",
+    "Transform": "Applies 2D or 3D transformations to HTML elements. Uses the CSS transform property for operations like move, rotate, scale, and skew. Supports animation for smooth visual effects."
 };

@@ -34,4 +34,5 @@ export const COMPONENTS = [
     "Text",
     "TextArea",
     "TextForm",
+    "Transform"
 ];

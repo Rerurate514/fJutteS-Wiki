@@ -324,4 +324,22 @@ new Column({
         })
     ]
 })`,
+    "Transform":`
+new Transform({
+    child: new Text("Transform Sample"),
+    baseCSS: new BaseCSS({
+        background: "#eee",
+        padding: "20px",
+        width: "200px",
+        textAlign: "center",
+    }),
+}).animate(
+    { 
+        translateY: 5,
+        rotateZ: 90
+    },
+    1000,
+    "ease-in-out"
+)
+    `
 }

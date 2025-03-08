@@ -2,7 +2,7 @@ import {
     Accordion, Box, Card, Center, Chips, Clip, Column, DropDownMenu, DropDownMenuItem, ElevatedButton, ExpandsPanel,
     FloatingActionButton, Grid, Header, Hover, Image, LimitedProviderScope, Link, Margin, Padding, PageRouter,
     Paginations, Position, RadioButton, RelativePosition, Row, Scaffold, Shrink, SimpleDialog, Slider, SpaceBox, Stack,
-    Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS, RelativePositions, Provider, CodeBlock
+    Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS, RelativePositions, Provider, CodeBlock, Transform
 } from 'fjuttes';
 import { LOGO_URL } from "../const/LOGO_URL.js";
 
@@ -10,12 +10,12 @@ const myProvider = Provider.createProvider(() => "undefined");
 const HomePage = () => new Text("Home Page");
 const AboutPage = () => new Text("About Page");
 
-const providerText = (function(value) {
+const providerText = (function (value) {
     return new LimitedProviderScope({
-        watchingProviders: [ myProvider ],
+        watchingProviders: [myProvider],
         build: (current) => new Text(`current Value is ${current}`)
     });
-})
+});
 
 const codeExampleString = `
 function hello() {
@@ -104,11 +104,11 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
     }),
     "Grid": new Column({
         baseCSS: new BaseCSS({
-            width: "200px",              
+            width: "200px",
         }),
         children: [
             new LimitedProviderScope({
-                watchingProviders: [ myProvider ],
+                watchingProviders: [myProvider],
                 build: (value) => {
                     return new Box({
                         width: `${value * 2}px`,
@@ -121,7 +121,7 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
                                     width: "50px",
                                     height: "50px",
                                     background: "green"
-                                }), 
+                                }),
                                 new Box({
                                     width: "50px",
                                     height: "50px",
@@ -136,7 +136,7 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
                                     width: "50px",
                                     height: "50px",
                                     background: "blue"
-                                }), 
+                                }),
                             ],
                         })
                     });
@@ -207,7 +207,7 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
     "RadioButton": new RadioButton({
         labelText: "Option A",
         name: "radio-group",
-        checkedRadioButton: (e, r) => { console.log(e, r) }
+        checkedRadioButton: (e, r) => { console.log(e, r); }
     }),
     "RelativePosition": new RelativePosition({
         child: new Text("Relative Text"),
@@ -292,4 +292,20 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
             providerText("")
         ]
     }),
+    "Transform": new Transform({
+        child: new Text("Transform Sample"),
+        baseCSS: new BaseCSS({
+            background: "#eee",
+            padding: "20px",
+            width: "200px",
+            textAlign: "center",
+        }),
+    }).animate(
+        { 
+            translateY: 5,
+            rotateZ: 90
+        },
+        1000,
+        "ease-in-out"
+    )
 };
