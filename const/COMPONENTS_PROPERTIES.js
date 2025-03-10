@@ -325,6 +325,34 @@ export const COMPONENTS_PROPERTIES_EN = {
             baseCSS: { type: "BaseCSS", description: "The base CSS styles." },
         }
     },
+    "RelativePositionAnimateSwitcher": {
+        properties: {
+            child: {
+                type: "Component",
+                description: "Child component to apply the animation to."
+            },
+            beginPosition: {
+                type: "RelativePositions",
+                description: "Relative position at the start of the animation."
+            },
+            endPosition: {
+                type: "RelativePositions",
+                description: "Relative position at the end of the animation."
+            },
+            duration: {
+                type: "number",
+                description: "Duration of the animation in milliseconds. Default is 600ms."
+            }
+        }
+    },
+    "LangSwitcher": {
+        properties: {
+            build: {
+                type: "function",
+                description: "Function to return the component to be rebuilt when switching languages. The current language code is passed as an argument."
+            }
+        }
+    }
 };
 
 export const COMPONENTS_PROPERTIES_JA = {
@@ -652,4 +680,32 @@ export const COMPONENTS_PROPERTIES_JA = {
             baseCSS: { type: "BaseCSS", description: "基本CSSスタイル。" },
         }
     },
+    "RelativePositionAnimateSwitcher": {
+        properties: {
+            child: {
+                type: "Component",
+                description: "アニメーションを適用する子コンポーネント。"
+            },
+            beginPosition: {
+                type: "RelativePositions",
+                description: "アニメーション開始時の相対位置。"
+            },
+            endPosition: {
+                type: "RelativePositions",
+                description: "アニメーション終了時の相対位置。"
+            },
+            duration: {
+                type: "number",
+                description: "アニメーションの実行時間（ミリ秒）。デフォルトは600ミリ秒。"
+            }
+        }
+    },
+    "LangSwitcher": {
+        properties: {
+            build: {
+                type: "function",
+                description: "言語切り替え時に再構築されるコンポーネントを返す関数。引数として現在の言語コードが渡されます。"
+            }
+        }
+    }
 };

@@ -2,7 +2,8 @@ import {
     Accordion, Box, Card, Center, Chips, Clip, Column, DropDownMenu, DropDownMenuItem, ElevatedButton, ExpandsPanel,
     FloatingActionButton, Grid, Header, Hover, Image, LimitedProviderScope, Link, Margin, Padding, PageRouter,
     Paginations, Position, RadioButton, RelativePosition, Row, Scaffold, Shrink, SimpleDialog, Slider, SpaceBox, Stack,
-    Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS, RelativePositions, Provider, CodeBlock, Transform
+    Text, TextArea, TextForm, ShadowLevel, TextCSS, FontCSS, BaseCSS, RelativePositions, Provider, CodeBlock, Transform, 
+    RelativePositionAnimateSwitcher, LangSwitcher, langSwitchProvider
 } from 'fjuttes';
 import { LOGO_URL } from "../const/LOGO_URL.js";
 
@@ -15,6 +16,12 @@ const providerText = (function (value) {
         watchingProviders: [myProvider],
         build: (current) => new Text(`current Value is ${current}`)
     });
+});
+
+const switcher = new RelativePositionAnimateSwitcher({
+    child: new Text("Animated Text"),
+    beginPosition: RelativePositions.LEFT,
+    endPosition: RelativePositions.RIGHT
 });
 
 const codeExampleString = `
@@ -146,7 +153,7 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
                 height: "32px"
             }),
             new Slider({
-                value: 50,
+                value: 100,
                 provider: myProvider
             }),
             new Text("Control Slider to resize")
@@ -307,5 +314,71 @@ export const COMPONENTS_USAGE_EXAMPLES_INSTANCES = {
         },
         1000,
         "ease-in-out"
-    )
+    ),
+    "RelativePositionAnimateSwitcher": new Column({
+        baseCSS: new BaseCSS({
+            padding: "16px"
+        }),
+        children: [
+            switcher,
+            new SpaceBox({
+                height: "16px"
+            }),
+            new ElevatedButton({
+                radius: "8px",
+                baseCSS: new BaseCSS({
+                    padding: "16px"
+                }),
+                child: new Text("animate"),
+                onClick: () => {
+                    switcher.animate();
+                }
+            })
+        ]
+    }),
+    "LangSwitcher": new Column({
+        children: [
+            new Center(
+                new LangSwitcher({
+                    build: (lang) => {
+                        if (lang[0] === "ja") {
+                            return new Text("こんにちは");
+                        } else {
+                            return new Text("Hello");
+                        }
+                    },
+                }),
+            ),
+            new SpaceBox({
+                height: "16px"
+            }),
+            new Row({
+                children: [
+                    new ElevatedButton({
+                        radius: "8px",
+                        baseCSS: new BaseCSS({
+                            padding: "16px"
+                        }),
+                        child: new Text("to en"),
+                        onClick: () => {
+                            langSwitchProvider.update(() => "en");
+                        }
+                    }),
+                    new SpaceBox({
+                        width: "16px"
+                    }),
+                    new ElevatedButton({
+                        radius: "8px",
+                        baseCSS: new BaseCSS({
+                            padding: "16px"
+                        }),
+                        child: new Text("to ja"),
+                        onClick: () => {
+                            langSwitchProvider.update(() => "ja");
+                        }
+                    })
+                ]
+            })
+        ]
+    }),
 };

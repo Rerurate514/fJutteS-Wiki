@@ -341,5 +341,82 @@ new Transform({
     1000,
     "ease-in-out"
 )
-    `
+    `,
+"RelativePositionAnimateSwitcher": `
+const switcher = new RelativePositionAnimateSwitcher({
+    child: new Text("Animated Text"),
+    beginPosition: RelativePositions.LEFT,
+    endPosition: RelativePositions.RIGHT
+});
+
+
+new Column({
+    baseCSS: new BaseCSS({
+        padding: "16px"
+    }),
+    children: [
+        switcher,
+        new SpaceBox({
+            height: "16px"
+        }),
+        new ElevatedButton({
+            radius: "8px",
+            baseCSS: new BaseCSS({
+                padding: "16px"
+            }),
+            child: new Text("animate"),
+            onClick: () => {
+                switcher.animate();
+            }
+        })
+    ]
+}),
+`,
+"LangSwitcher": `
+new Column({
+    children: [
+        new Center(
+            new LangSwitcher({
+                build: (lang) => {
+                    if (lang[0] === "ja") {
+                        return new Text("こんにちは");
+                    } else {
+                        return new Text("Hello");
+                    }
+                },
+            }),
+        ),
+        new SpaceBox({
+            height: "16px"
+        }),
+        new Row({
+            children: [
+                new ElevatedButton({
+                    radius: "8px",
+                    baseCSS: new BaseCSS({
+                        padding: "16px"
+                    }),
+                    child: new Text("to en"),
+                    onClick: () => {
+                        langSwitchProvider.update(() => "en");
+                    }
+                }),
+                new SpaceBox({
+                    width: "16px"
+                }),
+                new ElevatedButton({
+                    radius: "8px",
+                    baseCSS: new BaseCSS({
+                        padding: "16px"
+                    }),
+                    child: new Text("to ja"),
+                    onClick: () => {
+                        langSwitchProvider.update(() => "ja");
+                    }
+                })
+            ]
+        })
+    ]
+}),
+`
 }
