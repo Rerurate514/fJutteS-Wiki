@@ -1,4 +1,4 @@
-import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position, RelativePositions, RelativePosition } from "fjuttes";
+import { BaseCSS, Card, Column, FontCSS, Image, Margin, Grid, Text, TextCSS, BorderCSS, View, Hover, Stack, Link, SpaceBox, Padding, Center, Row, ShadowLevel, Box, Position, RelativePositions, RelativePosition, Scaffold, Header } from "fjuttes";
 import { LOGO_URL } from "../const/LOGO_URL.js";
 import { SectionTitle } from "../widget/sectionTitle.js";
 import { ColoredText } from "../widget/coloredText.js";
@@ -6,8 +6,31 @@ import { SUMMARY_TEXT_CSS_BLACK, SUMMARY_TEXT_CSS_WHITE } from "../setting/myTex
 import { BorderButton } from "../widget/borderButton.js";
 import { ComponentSectionCard } from "../widget/componentSectionCard.js";
 import { PageMargin } from "../widget/pageMargin.js";
+import { MyHeader } from "../widget/mHeader.js";
+import { MyFooter } from "../widget/mFooter.js";
 
 export class HomePage extends View {
+    constructor(){
+        super();
+    }
+
+    createWrapView(){
+        return document.createElement("div");
+    }
+
+    build(){
+        return new Scaffold({
+            header: new Header({
+                isStickyHeader: true,
+                child: new MyHeader()
+            }),
+            child: new _HomePage(),
+            footer: new MyFooter()
+        })
+    }
+}
+
+class _HomePage extends View {
     constructor(){
         super();
     }

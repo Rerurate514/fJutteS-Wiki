@@ -1,8 +1,31 @@
-import { PageRouter, BaseCSS, Card, Column, Provider, Row, Text, View, TextCSS, FontCSS, ElevatedButton, LimitedProviderScope, ShadowLevel, Box } from "fjuttes";
+import { PageRouter, BaseCSS, Card, Column, Header, Scaffold, Provider, Row, Text, View, TextCSS, FontCSS, ElevatedButton, LimitedProviderScope, ShadowLevel, Box } from "fjuttes";
 import { COMPONENTS } from "../const/COMPONENTS_COL.js";
 import { generateComponentsWiki } from "../logic/generateComponentsWiki.js";
+import { MyHeader } from "../widget/mHeader.js";
+import { MyFooter } from "../widget/mFooter.js";
 
 export class ComponentWikiPage extends View {
+    constructor(){
+        super();
+    }
+
+    createWrapView(){
+        return document.createElement("div");
+    }
+
+    build(){
+        return new Scaffold({
+            header: new Header({
+                isStickyHeader: true,
+                child: new MyHeader()
+            }),
+            child: new _ComponentWikiPage(),
+            footer: new MyFooter()
+        })
+    }
+}
+
+class _ComponentWikiPage extends View {
     constructor(index){
         const pageIndexProvider = Provider.createProvider(() => index ?? 0, "pageIndexProvider");
 
