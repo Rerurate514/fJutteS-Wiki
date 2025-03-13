@@ -3,12 +3,16 @@ import { MyHeader } from "./widget/mHeader.js";
 import { MyFooter } from "./widget/mFooter.js";
 import { HomePage } from "./pages/HomePage.js";
 import { ComponentWikiPage } from "./pages/ComponentWikiPage.js";
+import { LibrariesPage } from "./pages/LibrariesPage.js";
+import { DeveloppersPage } from "./pages/developpersPage.js";
 
 new ProviderObserver().outLogs();
 
 const routes = {
     "/": HomePage,
-    "wiki": ComponentWikiPage
+    "wiki": ComponentWikiPage,
+    "lib": LibrariesPage,
+    "dev": DeveloppersPage
 }
 
 assembleView(
