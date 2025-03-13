@@ -1,6 +1,6 @@
 import { BaseCSS, BorderCSS, Box, Center, FontCSS, Image, Link, Margin, Padding, Row, SpaceBox, Text, Hover, TextCSS, View, ElevatedButton, route } from "fjuttes";
 import { LOGO_URL } from "../const/LOGO_URL.js";
-import { pageIndexProvider } from "../providers/routerProvider.js";
+
 export class MyHeader extends View {
     constructor(){
         super();

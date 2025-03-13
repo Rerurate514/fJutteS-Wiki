@@ -1,5 +1,4 @@
-import { assembleView, ProviderObserver, route, Scaffold, Header, Text, AppRouter } from "fjuttes";
-import { routerProvider } from "./providers/routerProvider.js";
+import { assembleView, ProviderObserver, route, Scaffold, Header, Text, AppRouter } from "fjuttes"
 import { MyHeader } from "./widget/mHeader.js";
 import { MyFooter } from "./widget/mFooter.js";
 import { HomePage } from "./pages/HomePage.js";
