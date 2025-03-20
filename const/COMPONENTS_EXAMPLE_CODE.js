@@ -378,7 +378,7 @@ new Column({
         new Center(
             new LangSwitcher({
                 build: (lang) => {
-                    if (lang[0] === "ja") {
+                    if (lang === "ja") {
                         return new Text("こんにちは");
                     } else {
                         return new Text("Hello");
