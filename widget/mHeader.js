@@ -39,7 +39,7 @@ export class MyHeader extends View {
                         })
                     ),
                     new SpaceBox({width: "128px"}),
-                    this.buildHeaderLink("HOME", "/"),
+                    this.buildHeaderLink("HOME", ""),
                     this.buildHeaderLink("COMPONENTS", "wiki"),
                     this.buildHeaderLink("LIBRARIES", "lib"),
                     this.buildHeaderLink("DEVELOPPER", "dev"),
@@ -68,8 +68,12 @@ export class MyHeader extends View {
                     onClick: () => {
                         route(routeHash);
                     },
-                    child: new Margin({
-                        all: "4px",
+                    child: new Box({
+                        baseCSS: new BaseCSS({
+                            padding: "20px",
+                            width: "100%",
+                            height: "100%"
+                        }),
                         child: new Text(
                             text,
                             new TextCSS({
