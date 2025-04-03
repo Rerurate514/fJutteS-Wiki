@@ -1,4 +1,4 @@
-import { View, Scaffold, Header, Column, Box, Row, ElevatedButton, Text, BorderCSS, Center, Margin, BaseCSS, Card, SpaceBox } from "fjuttes";
+import { View, Scaffold, Header, Column, Box, Row, ElevatedButton, Text, BorderCSS, Center, Margin, BaseCSS, Card, SpaceBox, TextCSS } from "fjuttes";
 import { MyHeader } from "../widget/mHeader.js";
 import { MyFooter } from "../widget/mFooter.js";
 import { ColoredText } from "../widget/coloredText.js";
@@ -48,7 +48,7 @@ class _LibrariesPage extends View {
                     }),
                     this.buildLibCard(
                         "Jaterials",
-                        "This library houses a collection of basic components.",
+                        "This library houses a collection of basic components.Various components are defined, ranging from basic layout components to material components.",
                         "/jaterials"
                     ),
                     new SpaceBox({
@@ -91,19 +91,21 @@ class _LibrariesPage extends View {
                         fontSize: "64px"
                     })
                 }),
+                new SpaceBox({
+                    width: "32px",
+                }),
                 new Box({
                     width: "550px",
                     height: "100px",
                     child: new Center(
-                        new Text(bio)
+                        new Text(
+                            bio,
+                            new TextCSS({
+                                textAlign: "left"
+                            })
+                        )
                     )
                 }),
-                new ElevatedButton({
-                    baseCSS: new BaseCSS({
-                        padding: "16px",
-                    }),
-                    child: new Text(">")
-                })
             ]
         })
     }
