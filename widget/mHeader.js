@@ -52,12 +52,15 @@ export class MyHeader extends View {
         return new Box({
             width: "100%",
             height: "100%",
-            borderCSS: new BorderCSS({
-                borderSize: "2px",
-                color: "#8BCD8A",
-                isTop: false,
-                isBottom: false,
-                isRight: false
+            baseCSS: new BaseCSS({
+                padding: "4px",
+                borderCSS: new BorderCSS({
+                    borderSize: "2px",
+                    color: "#8BCD8A",
+                    isTop: false,
+                    isBottom: false,
+                    isRight: false
+                }),
             }),
             child: new Center(
                 new ElevatedButton({
