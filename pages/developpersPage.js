@@ -47,7 +47,7 @@ class _DeveloppersPage extends View {
                         children: [
                             new Clip({
                                 child: new Image({
-                                    src: "../src/skadi_ico.png",
+                                    src: "https://raw.githubusercontent.com/Rerurate514/fJutteS-Wiki/refs/heads/main/src/skadi_ico.png",
                                     baseCSS: new BaseCSS({
                                         width: "256px",
                                         height: "256px",
